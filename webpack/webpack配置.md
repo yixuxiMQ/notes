@@ -1,5 +1,6 @@
 ```js
-const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')；
 
 module.exports = {
   // 入口
@@ -26,8 +27,9 @@ module.exports = {
       }
     ]
   },
+  plugins: [new HtmlWebpackPlugin()],
   // 模式，有development和production两种
-  mode: 'development',
+  mode: 'development'，
 }
 ```
 
