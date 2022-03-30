@@ -1,0 +1,24 @@
+- Vue是一套用于构建用户界面的渐进式框架。
+- 什么是渐进式框架？
+  - 表示我们可以在项目中一点点来引入和使用Vue，而不一定需要全部用Vue来开发整个项目。
+- Vue3带来的变化（源码）
+  - 通过monorepo的形式来管理源码
+    - mono：单个
+    - repo：repository仓库
+    - 主要是将许多项目的代码存储在同一个repository中
+    - 这样做的目的是，多个包本身相互独立，可以有自己的功能逻辑、单元测试，同时又在同一个仓库下，便于管理
+    - 模块划分更加清晰，可维护性、可扩展性更强
+  - 使用typescript重写源码
+    - 在Vue2.x的时候，Vue使用flow来进行类型检测
+    - 在Vue3.x的时候，Vue的源码全部使用typescript来进行重写，并且Vue本身对typescript的支持也更好了
+- Vue3带来的变化（性能）
+  - 使用proxy进行数据劫持
+    - 在Vue2.x的时候，使用Object.defineProperty来劫持数据的getter和setter方法的
+    - 使用Object.defineProperty存在一个缺陷，当给对象添加或者删除属性时，无法劫持和监听
+    - 所以不得不提供一些特殊的API，比如$set和$delete，增加了开发者的学习成本
+    - 在Vue3.x的时候，使用proxy来实现数据劫持
+  - 删除了一些不必要的API
+    - 移除了实例上的$on、$off、$once
+    - 移除了一次特性，如filter、内联模板等
+  - 编译方面的优化
+    - 生成block tree，slot编译优化，diff算法优化
