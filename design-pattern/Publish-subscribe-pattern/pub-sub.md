@@ -63,7 +63,7 @@
    // dispatch.remove("facialMask", xiaoHong);
    // dispatch.remove("facialMask", xiaoLan);
    
-   // 发布测试
+   
    const data = {
      type: "N95",
      price: "5￥",
